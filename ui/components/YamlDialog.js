@@ -1,11 +1,5 @@
-import {
-  Dialog,
-  DialogActions,
-  DialogContent,
-  Divider,
-  IconButton,
-  Tooltip,
-} from '@layer5/sistent';
+import { Dialog, DialogActions, DialogContent, Divider, IconButton } from '@layer5/sistent';
+import { CustomTooltip } from '@layer5/sistent';
 import useStyles from './MesheryPatterns/Cards.styles';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
 import FullscreenExit from '@material-ui/icons/FullscreenExit';
@@ -36,11 +30,11 @@ const YAMLDialog = ({
         <YamlDialogTitleText variant="h6" className={classes.yamlDialogTitleText}>
           {name}
         </YamlDialogTitleText>
-        <Tooltip title="Exit Fullscreen" arrow interactive placement="bottom">
+        <CustomTooltip title="Exit Fullscreen" interactive placement="bottom">
           <IconButton onClick={toggleFullScreen}>
             {fullScreen ? <FullscreenExit /> : <Fullscreen />}
           </IconButton>
-        </Tooltip>
+        </CustomTooltip>
       </StyledDialog>
       <Divider variant="fullWidth" light />
       <DialogContent>
@@ -61,16 +55,16 @@ const YAMLDialog = ({
       </DialogContent>
       <Divider variant="fullWidth" light />
       <DialogActions>
-        <Tooltip title="Update Pattern">
+        <CustomTooltip title="Update Pattern">
           <IconButton aria-label="Update" color="primary" onClick={updateHandler}>
             <Save />
           </IconButton>
-        </Tooltip>
-        <Tooltip title="Delete Filter">
+        </CustomTooltip>
+        <CustomTooltip title="Delete Filter">
           <IconButton aria-label="Delete" color="primary" onClick={deleteHandler}>
             <DeleteIcon />
           </IconButton>
-        </Tooltip>
+        </CustomTooltip>
       </DialogActions>
     </Dialog>
   );

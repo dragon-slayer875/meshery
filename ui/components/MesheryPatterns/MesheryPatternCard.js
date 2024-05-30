@@ -284,7 +284,7 @@ function MesheryPatternCard_({
                 <Link href={`${MESHERY_CLOUD_PROD}/user/${pattern?.user_id}`} target="_blank">
                   <Avatar alt="profile-avatar" src={owner?.avatar_url} />
                 </Link>
-                <CustomTooltip title="Enter Fullscreen" arrow interactive placement="top">
+                <CustomTooltip title="Enter Fullscreen" interactive placement="top">
                   <IconButton
                     onClick={(ev) =>
                       genericClickHandler(ev, () => {
@@ -350,7 +350,7 @@ function MesheryPatternCard_({
             <Grid item xs={12}>
               <div className={classes.updateDeleteButtons}>
                 {/* Save button */}
-                <CustomTooltip title="Save" arrow interactive placement="bottom">
+                <CustomTooltip title="Save" interactive placement="bottom">
                   <IconButton
                     disabled={!CAN(keys.EDIT_DESIGN.action, keys.EDIT_DESIGN.subject)}
                     onClick={(ev) => genericClickHandler(ev, updateHandler)}
@@ -360,7 +360,7 @@ function MesheryPatternCard_({
                 </CustomTooltip>
 
                 {/* Delete Button */}
-                <CustomTooltip title="Delete" arrow interactive placement="bottom">
+                <CustomTooltip title="Delete" interactive placement="bottom">
                   <IconButton
                     disabled={!CAN(keys.DELETE_A_DESIGN.action, keys.DELETE_A_DESIGN.subject)}
                     onClick={(ev) => genericClickHandler(ev, deleteHandler)}

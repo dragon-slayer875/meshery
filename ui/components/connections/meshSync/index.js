@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
   TableCell,
-  Tooltip,
   TableContainer,
   Table,
   Grid,
@@ -14,7 +13,7 @@ import {
 import Moment from 'react-moment';
 import { useNotification } from '../../../utils/hooks/useNotification';
 import { EVENT_TYPES } from '../../../lib/event-types';
-import { ResponsiveDataTable } from '@layer5/sistent';
+import { CustomTooltip, ResponsiveDataTable } from '@layer5/sistent';
 import CustomColumnVisibilityControl from '../../../utils/custom-column';
 import useStyles from '../../../assets/styles/general/tool.styles';
 import SearchBar from '../../../utils/custom-search';
@@ -135,7 +134,7 @@ export default function MeshSyncTable(props) {
           const shouldTruncate = value?.length > maxCharLength;
 
           return (
-            <Tooltip title={value} placement="top">
+            <CustomTooltip title={value} placement="top">
               <div
                 style={{
                   overflow: 'hidden',
@@ -145,7 +144,7 @@ export default function MeshSyncTable(props) {
               >
                 {shouldTruncate ? `${value.slice(0, maxCharLength)}...` : value}
               </div>
-            </Tooltip>
+            </CustomTooltip>
           );
         },
       },
@@ -227,7 +226,7 @@ export default function MeshSyncTable(props) {
           const shouldTruncate = value?.length > maxCharLength;
 
           return (
-            <Tooltip title={value} placement="top">
+            <CustomTooltip title={value} placement="top">
               <div
                 style={{
                   overflow: 'hidden',
@@ -237,7 +236,7 @@ export default function MeshSyncTable(props) {
               >
                 {shouldTruncate ? `${value.slice(0, maxCharLength)}...` : value}
               </div>
-            </Tooltip>
+            </CustomTooltip>
           );
         },
       },
@@ -251,18 +250,17 @@ export default function MeshSyncTable(props) {
         },
         customBodyRender: function CustomBody(value) {
           return (
-            <Tooltip
+            <CustomTooltip
               title={
                 <Moment startOf="day" format="LLL">
                   {value}
                 </Moment>
               }
               placement="top"
-              arrow
               interactive
             >
               <Moment format="LL">{value}</Moment>
-            </Tooltip>
+            </CustomTooltip>
           );
         },
       },

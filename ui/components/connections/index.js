@@ -667,7 +667,6 @@ function Connections(props) {
                 </Moment>
               }
               placement="top"
-              arrow
               interactive
             >
               <Moment format="LL">{value}</Moment>
