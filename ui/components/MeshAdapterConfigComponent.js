@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import Grid from '@material-ui/core/Grid';
-import { NoSsr, Chip, Button, TextField, Tooltip, Avatar, makeStyles } from '@material-ui/core';
+import { NoSsr, Chip, Button, TextField, Avatar, makeStyles } from '@material-ui/core';
 import blue from '@material-ui/core/colors/blue';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -16,6 +16,7 @@ import { EVENT_TYPES } from '../lib/event-types';
 import BadgeAvatars from './CustomAvatar';
 import { keys } from '@/utils/permission_constants';
 import CAN from '@/utils/can';
+import { CustomTooltip } from '@layer5/sistent';
 
 const useStyles = makeStyles((theme) => ({
   wrapperClass: {
@@ -433,7 +434,7 @@ const MeshAdapterConfigComponent = (props) => {
             }
 
             return (
-              <Tooltip
+              <CustomTooltip
                 key={adapter.uniqueID}
                 title={`Meshery Adapter for
                         ${adapter.name
@@ -456,7 +457,7 @@ const MeshAdapterConfigComponent = (props) => {
                   variant="outlined"
                   data-cy="chipAdapterLocation"
                 />
-              </Tooltip>
+              </CustomTooltip>
             );
           })}
         </div>

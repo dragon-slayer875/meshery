@@ -1,11 +1,5 @@
-import {
-  Chip,
-  IconButton,
-  TableCell,
-  TableSortLabel,
-  Tooltip,
-  withStyles,
-} from '@material-ui/core';
+import { Chip, IconButton, TableCell, TableSortLabel, withStyles } from '@material-ui/core';
+import { CustomTooltip } from '@layer5/sistent';
 import React, { useEffect, useState } from 'react';
 import Modal from './Modal';
 import { CONNECTION_KINDS, CON_OPS } from '../utils/Enum';
@@ -197,13 +191,13 @@ const MesheryCredentialComponent = ({ updateProgress, classes, connectionMetadat
         },
         customBodyRender: function CustomBody(_, tableMeta) {
           return (
-            <Tooltip title={tableMeta.rowData[1]}>
+            <CustomTooltip title={tableMeta.rowData[1]}>
               <Chip
                 label={tableMeta.rowData[1]}
                 variant="outlined"
                 icon={getCredentialsIcon(tableMeta.rowData[1])}
               />
-            </Tooltip>
+            </CustomTooltip>
           );
         },
       },
@@ -284,14 +278,17 @@ const MesheryCredentialComponent = ({ updateProgress, classes, connectionMetadat
                   <EditIcon />
                 </IconButton>
               </Tooltip> */}
-              <Tooltip key={`delete_credential-${tableMeta.rowIndex}`} title="Delete Credential">
+              <CustomTooltip
+                key={`delete_credential-${tableMeta.rowIndex}`}
+                title="Delete Credential"
+              >
                 <IconButton
                   aria-label="delete"
                   onClick={() => handleSubmit({ type: 'delete', id: rowData['id'] })}
                 >
                   <DeleteIcon />
                 </IconButton>
-              </Tooltip>
+              </CustomTooltip>
             </div>
           );
         },

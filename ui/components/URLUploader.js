@@ -1,24 +1,9 @@
 import React, { useEffect } from 'react';
 import LinkIcon from '@material-ui/icons/Link';
-import { Tooltip, IconButton, TextField, Button, Grid } from '@material-ui/core';
+import { IconButton, TextField, Button, Grid } from '@material-ui/core';
+import { CustomTooltip } from '@layer5/sistent';
 import { withStyles } from '@material-ui/core/styles';
-// import { createTheme } from '@material-ui/core/styles';
 import { URLValidator } from '../utils/URLValidator';
-
-// const getMuiTheme = () => createTheme({
-//   palette : {
-//     primary : {
-//       main : "#607d8b"
-//     }
-//   },
-//   overrides : {
-//     MuiGrid : {
-//       input : {
-//         color : '#607d8b'
-//       }
-//     },
-//   }
-// })
 
 const styles = (theme) => ({
   paper: {
@@ -66,11 +51,11 @@ const URLUploader = ({ onSubmit, classes }) => {
   return (
     <>
       <label htmlFor="url-upload-button">
-        <Tooltip title="Upload URL">
+        <CustomTooltip title="Upload URL">
           <IconButton aria-label="URL-Upload" component="span" onClick={handleOpen}>
             <LinkIcon />
           </IconButton>
-        </Tooltip>
+        </CustomTooltip>
         <GenericModal
           open={open}
           handleClose={handleClose}

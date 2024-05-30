@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { TableRow, TableCell, Table, TableBody, TableHead, Tooltip } from '@material-ui/core';
+import { TableRow, TableCell, Table, TableBody, TableHead } from '@material-ui/core';
+import { CustomTooltip } from '@layer5/sistent';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import MUIDataTable from 'mui-datatables';
@@ -122,9 +123,9 @@ class MesherySMIResults extends Component {
             );
           },
           customBodyRender: (value) => (
-            <Tooltip title={value} placement="top">
+            <CustomTooltip title={value} placement="top">
               <div>{value.slice(0, 5) + '...'}</div>
-            </Tooltip>
+            </CustomTooltip>
           ),
         },
       },

@@ -22,10 +22,10 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  Tooltip,
   Typography,
   withStyles,
 } from '@material-ui/core';
+import { CustomTooltip } from '@layer5/sistent';
 import { blue } from '@material-ui/core/colors';
 import NoSsr from '@material-ui/core/NoSsr';
 import AddIcon from '@material-ui/icons/Add';
@@ -712,9 +712,9 @@ class MesheryAdapterPlayComponent extends React.Component {
             );
           },
           customBodyRender: (value) => (
-            <Tooltip title={value} placement="top">
+            <CustomTooltip title={value} placement="top">
               <div>{value.slice(0, 5) + '...'}</div>
-            </Tooltip>
+            </CustomTooltip>
           ),
         },
       },

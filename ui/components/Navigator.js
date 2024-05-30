@@ -75,7 +75,6 @@ import {
 import { iconSmall } from '../css/icons.styles';
 import CAN from '@/utils/can';
 import { keys } from '@/utils/permission_constants';
-import { CustomTextTooltip } from './MesheryMeshInterface/PatternService/CustomTextTooltip';
 
 const styles = (theme) => ({
   root: {
@@ -1071,12 +1070,12 @@ class Navigator extends React.Component {
             rel="noreferrer"
             style={{ color: 'white' }}
           >
-            <CustomTextTooltip
+            <CustomTooltip
               title={`Newer version of Meshery available: ${latest}`}
               placement="right"
             >
               <OpenInNewIcon style={{ width: '0.85rem', verticalAlign: 'middle' }} />
-            </CustomTextTooltip>
+            </CustomTooltip>
           </a>
         </span>
       );
@@ -1291,11 +1290,11 @@ class Navigator extends React.Component {
                     isDrawerCollapsed ? classes.extraPadding : '',
                   )}
                 >
-                  <CustomTextTooltip title={title} placement={isDrawerCollapsed ? 'right' : 'top'}>
+                  <CustomTooltip title={title} placement={isDrawerCollapsed ? 'right' : 'top'}>
                     <ListItemIcon className={classNames(classes.listIcon, classes.helpIcon)}>
                       {icon}
                     </ListItemIcon>
-                  </CustomTextTooltip>
+                  </CustomTooltip>
                 </a>
               </Grow>
             </ListItem>
@@ -1305,7 +1304,7 @@ class Navigator extends React.Component {
           className={classes.rightMargin}
           style={!isDrawerCollapsed ? { display: 'none' } : { marginLeft: '4px' }}
         >
-          <CustomTextTooltip title="Help" placement={isDrawerCollapsed ? 'right' : 'top'}>
+          <CustomTooltip title="Help" placement={isDrawerCollapsed ? 'right' : 'top'}>
             <IconButton
               className={isDrawerCollapsed ? classes.collapsedHelpButton : classes.rightTranslate}
               onClick={this.toggleSpacing}
@@ -1315,7 +1314,7 @@ class Navigator extends React.Component {
                 style={{ fontSize: '1.45rem', ...iconSmall }}
               />
             </IconButton>
-          </CustomTextTooltip>
+          </CustomTooltip>
         </ListItem>
       </ButtonGroup>
     );

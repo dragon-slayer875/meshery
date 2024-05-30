@@ -11,9 +11,9 @@ import {
   Tab,
   Tabs,
   TextField,
-  Tooltip,
   Typography,
 } from '@material-ui/core';
+import { CustomTooltip } from '@layer5/sistent';
 import CloseIcon from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
 import { Search } from '@material-ui/icons';
@@ -484,7 +484,7 @@ function ConfirmationMsg(props) {
                       <div className={classes.contexts}>
                         {context.map((ctx) => (
                           <div id={ctx.id} className={classes.chip} key={ctx.id}>
-                            <Tooltip title={`Server: ${ctx.server}`}>
+                            <CustomTooltip title={`Server: ${ctx.server}`}>
                               <div
                                 style={{
                                   display: 'flex',
@@ -515,7 +515,7 @@ function ConfirmationMsg(props) {
                                   data-cy="chipContextName"
                                 />
                               </div>
-                            </Tooltip>
+                            </CustomTooltip>
                           </div>
                         ))}
                       </div>
