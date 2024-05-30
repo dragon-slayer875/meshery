@@ -1,21 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { styled } from '@mui/system';
-import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
-
-export const CustomTooltip = styled(({ className, ...props }) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))({
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: 'rgba(122,132,142,1)',
-    color: '#F5F5F5',
-    padding: '1rem',
-    fontSize: '0.925rem',
-    '& .tooltip-dark': {
-      fontWeight: 'bold',
-      fontSize: '1rem',
-    },
-  },
-});
 
 const useStyles = makeStyles((theme) => ({
   dialogTitle: {
