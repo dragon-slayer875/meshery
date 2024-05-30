@@ -12,6 +12,7 @@ import { updateProgress } from '../../lib/store';
 import GenericModal from '../GenericModal';
 import MesheryPerformanceComponent from './index';
 import { Paper, Typography, Button, DialogTitle, TableCell, TableRow } from '@material-ui/core';
+import { CustomTooltip } from '@layer5/sistent';
 import fetchPerformanceProfiles from '../graphql/queries/PerformanceProfilesQuery';
 import { withStyles } from '@material-ui/core/styles';
 import { iconMedium } from '../../css/icons.styles';
@@ -25,7 +26,6 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 import PerformanceResults from './PerformanceResults';
 import EditIcon from '@material-ui/icons/Edit';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import ReusableTooltip from '../reusable-tooltip';
 import CustomColumnVisibilityControl from '../../utils/custom-column';
 import ViewSwitch from '../ViewSwitch';
 import SearchBar from '@/utils/custom-search';
@@ -393,7 +393,7 @@ function PerformanceProfile({ updateProgress, classes, user, handleDelete }) {
         customBodyRender: function CustomBody(_, tableMeta) {
           return (
             <div style={{ display: 'flex' }}>
-              <ReusableTooltip title="Edit">
+              <CustomTooltip title="Edit">
                 <IconButton
                   style={iconMedium}
                   onClick={(ev) => {
@@ -409,9 +409,9 @@ function PerformanceProfile({ updateProgress, classes, user, handleDelete }) {
                 >
                   <EditIcon style={iconMedium} />
                 </IconButton>
-              </ReusableTooltip>
+              </CustomTooltip>
 
-              <ReusableTooltip title="Run test">
+              <CustomTooltip title="Run test">
                 <IconButton
                   style={iconMedium}
                   onClick={(ev) => {
@@ -425,7 +425,7 @@ function PerformanceProfile({ updateProgress, classes, user, handleDelete }) {
                 >
                   <PlayArrowIcon style={iconMedium} />
                 </IconButton>
-              </ReusableTooltip>
+              </CustomTooltip>
             </div>
           );
         },
