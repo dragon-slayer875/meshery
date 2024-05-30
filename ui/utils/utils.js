@@ -5,7 +5,7 @@ import { EVENT_TYPES } from './Enum';
 import _ from 'lodash';
 import { getWebAdress } from './webApis';
 import { APPLICATION, DESIGN, FILTER } from '../constants/navigator';
-import { Tooltip } from '@mui/material';
+import { CustomTooltip } from '@layer5/sistent';
 import jsyaml from 'js-yaml';
 
 /**
@@ -272,7 +272,7 @@ export function JsonParse(item, safe = true) {
 
 export const ConditionalTooltip = ({ value, maxLength, ...restProps }) => {
   return value?.length > maxLength ? (
-    <Tooltip title={value} arrow placement="top">
+    <CustomTooltip title={value} arrow placement="top">
       <div
         style={{
           maxWidth: '15rem',
@@ -284,7 +284,7 @@ export const ConditionalTooltip = ({ value, maxLength, ...restProps }) => {
       >
         {`${value.slice(0, maxLength)}...`}
       </div>
-    </Tooltip>
+    </CustomTooltip>
   ) : (
     <div
       style={{
@@ -362,9 +362,9 @@ export const ResizableCell = ({ value }) => (
   <div style={{ position: 'relative', height: '20px' }}>
     <div style={customBodyRenderStyle}>
       <div style={cellStyle}>
-        <Tooltip title={value} placement="top-start">
+        <CustomTooltip title={value} placement="top-start">
           <span style={{ cursor: 'pointer' }}>{value}</span>
-        </Tooltip>
+        </CustomTooltip>
       </div>
     </div>
   </div>
