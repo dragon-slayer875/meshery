@@ -14,7 +14,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_ACCESS_TOKEN }}
           fetch-depth: 1
       - name: Set spreadsheet_uri as environment variable
         run: echo "spreadsheet_uri=${{inputs.spreadsheet_uri}}" >> $GITHUB_ENV
