@@ -7,7 +7,6 @@ import { SEVERITY_STYLE } from '../NotificationCenter/constants';
 import { ErrorMetadataFormatter } from '../NotificationCenter/metadata';
 import { ComponentIcon } from './common';
 import { Button } from '@layer5/sistent';
-import { ExternalLinkIcon } from '@layer5/sistent';
 import { UsesSistent } from '../SistentWrapper';
 
 const StyledDetailBox = styled(Box)(({ theme, severityColor, bgOpacity }) => ({
@@ -83,10 +82,10 @@ const DeploymentSummaryFormatter_ = ({ event }) => {
           <Button
             variant="contained"
             color="primary"
-            onClick={() => window.open(event.metadata?.view_link, '_blank')}
+            onClick={() => window.open(event.metadata?.view_link, '_self')}
             style={{ gap: '0.25rem' }}
           >
-            Open In Visualizer <ExternalLinkIcon fill={theme.palette.common.white} />
+            Open In Visualizer
           </Button>
         )}
       </StyledDetailBox>
