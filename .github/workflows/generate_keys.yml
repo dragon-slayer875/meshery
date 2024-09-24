@@ -34,7 +34,7 @@ jobs:
 
       - name: Run Go program to generate permissions_constants.js
         run: |
-          go run .github/scripts/generate_permissions.go keys.csv ui/utils/permissions_constants.js
+          go run .github/scripts/generate_permissions_constant.go keys.csv ui/utils/permissions_constants.js
 
       - name: Create permissions folder
         run: |
