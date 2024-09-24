@@ -40,11 +40,9 @@ jobs:
         run: |
           [ ! -d "./server/permissions" ] && mkdir -p "./server/permissions";
           mv keys.csv server/permissions/keys.csv;
+          
       - name: Save keys.csv to docs/assets/excel
         run: cp server/permissions/keys.csv docs/assets/excel/keys.csv
-
-      - name: Pull changes from remote
-        run: git pull origin master
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
