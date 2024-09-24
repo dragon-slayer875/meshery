@@ -34,13 +34,13 @@ jobs:
 
       - name: Run Go program to generate permissions_constants.js
         run: |
-          go run .github/scripts/generate_permissions_constant.go keys.csv ui/utils/permissions_constants.js
+          go run .github/scripts/generate_permissions_constant.go keys.csv ui/utils/permission_constants.js
 
       - name: Create permissions folder
         run: |
           [ ! -d "./server/permissions" ] && mkdir -p "./server/permissions";
           mv keys.csv server/permissions/keys.csv;
-          
+
       - name: Save keys.csv to docs/assets/excel
         run: cp server/permissions/keys.csv docs/assets/excel/keys.csv
 
