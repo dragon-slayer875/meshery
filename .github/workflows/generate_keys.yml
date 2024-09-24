@@ -26,6 +26,16 @@ jobs:
       - name: Dump keys from the spreadsheet
         run: |
           curl -L "${{ env.spreadsheet_uri }}" -o "./keys.csv";
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.20"
+
+      - name: Run Go program to generate permissions_constants.js
+        run: |
+          go run .github/scripts/generate_permissions.go keys.csv ui/utils/permissions_constants.js
+
       - name: Create permissions folder
         run: |
           [ ! -d "./server/permissions" ] && mkdir -p "./server/permissions";
