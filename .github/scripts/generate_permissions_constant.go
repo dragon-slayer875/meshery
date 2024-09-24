@@ -21,7 +21,7 @@ func main() {
 	}
 
 	inputFile := os.Args[1]
-	outputFile := os.Args[2]
+	outputFile := "permission_constants.js"
 
 	// Open the input CSV file
 	f, err := os.Open(inputFile)
